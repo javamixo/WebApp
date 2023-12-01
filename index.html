@@ -1,9 +1,27 @@
-<html><head><meta http-equiv="content-type" content="text-html; charset=utf-8" /></head><body><pre >Now that we've dipped our feet into how to
-structure and style webpages, let's take a look
-at what we need to make them interactive.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraphs in Corners</title>
+</head>
+<body style="margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
 
-We'll take an in depth look into Javascript, a
-programming language that powers dynamic
+    <div style="width: 50%; height: 50%; padding: 20px; box-sizing: border-box; background-color: #f0f0f0;">
+        <p>Paragraph 1</p>
+    </div>
 
-websites and apps.
-</pre></body></html>
+    <div style="width: 50%; height: 50%; padding: 20px; box-sizing: border-box; background-color: #e0e0e0; align-self: flex-end;">
+        <p>Paragraph 2</p>
+    </div>
+
+    <div style="width: 50%; height: 50%; padding: 20px; box-sizing: border-box; background-color: #d0d0d0; align-self: flex-start;">
+        <p>Paragraph 3</p>
+    </div>
+
+    <div style="width: 50%; height: 50%; padding: 20px; box-sizing: border-box; background-color: #c0c0c0; align-self: flex-end;">
+        <p>Paragraph 4</p>
+    </div>
+
+</body>
+</html>
