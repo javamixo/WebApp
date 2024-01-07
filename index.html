@@ -1,3 +1,13 @@
+import pandas as pd
+
+# Read the CSV file
+df = pd.read_csv('pricemarket.csv')
+
+# Create a dictionary from the DataFrame for easy access
+prices_dict = df.set_index('product')['priceAmount'].to_dict()
+
+# HTML code (as a string)
+html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,16 +26,16 @@
     ">
         <p style="font-size: 12px;">NIKORA
             <ul>
-  							<li>პური: </li>
-  							<li>კარტოფილი: </li>
-  							<li>კვერცხი: </li>
-                <li>ზეთი: </li>
-  							<li>შაქარი: </li>
-  							<li>კარაქი: </li>
-                <li>რძე: </li>
-  							<li>ქათმის ფილე: </li>
-  							<li>მაწონი: </li>
-						</ul>            
+                <li>პური: {NIKORA_puri}</li>
+                <li>კარტოფილი: {NIKORA_kartopili}</li>
+                <li>კვერცხი: {NIKORA_kvercxi}</li>
+                <li>ზეთი: {NIKORA_zeti}</li>
+  				<li>შაქარი: {NIKORA_shaqari}</li>
+  				<li>კარაქი: {NIKORA_karaqi}</li>
+                <li>რძე: {NIKORA_rdze}</li>
+  				<li>ქათმის ფილე: {NIKORA_qatmisfile}</li>
+  				<li>მაწონი: {NIKORA_mawoni}</li>
+            </ul>
          </p>
     </div>
 
@@ -34,69 +44,117 @@
         height: 50%;
         padding: 20px;
         box-sizing: border-box;
-        background-color: #e0e0e0;
-        align-self: flex-end;
+        background-color: #f0f0f0;
     ">
         <p style="font-size: 12px;">CAREFOUR
             <ul>
-  							<li>პური: </li>
-  							<li>კარტოფილი: </li>
-  							<li>კვერცხი: </li>
-                <li>ზეთი: </li>
-  							<li>შაქარი: </li>
-  							<li>კარაქი: </li>
-                <li>რძე: </li>
-  							<li>ქათმის ფილე: </li>
-  							<li>მაწონი: </li>
-						</ul> 
-        </p>
+                <li>პური: {CAREFOUR_puri}</li>
+                <li>კარტოფილი: {CAREFOUR_kartopili}</li>
+                <li>კვერცხი: {CAREFOUR_kvercxi}</li>
+                <li>ზეთი: {CAREFOUR_zeti}</li>
+  				<li>შაქარი: {CAREFOUR_shaqari}</li>
+  				<li>კარაქი: {CAREFOUR_karaqi}</li>
+                <li>რძე: {CAREFOUR_rdze}</li>
+  				<li>ქათმის ფილე: {CAREFOUR_qatmisfile}</li>
+  				<li>მაწონი: {CAREFOUR_mawoni}</li>
+            </ul>
+         </p>
     </div>
-
+    
     <div style="
         width: 50%;
         height: 50%;
         padding: 20px;
         box-sizing: border-box;
-        background-color: #d0d0d0;
-        align-self: flex-start;
+        background-color: #f0f0f0;
     ">
-        <p style="font-size: 12px;">2 NABIJI
+        <p style="font-size: 12px;">2NABIJI
             <ul>
-  							<li>პური: </li>
-  							<li>კარტოფილი: </li>
-  							<li>კვერცხი: </li>
-                <li>ზეთი: </li>
-  							<li>შაქარი: </li>
-  							<li>კარაქი: </li>
-                <li>რძე: </li>
-  							<li>ქათმის ფილე: </li>
-  							<li>მაწონი: </li>
-						</ul> 
-        </p>
+                <li>პური: {ORINABIJI_puri}</li>
+                <li>კარტოფილი: {ORINABIJI_kartopili}</li>
+                <li>კვერცხი: {ORINABIJI_kvercxi}</li>
+                <li>ზეთი: {ORINABIJI_zeti}</li>
+  				<li>შაქარი: {ORINABIJI_shaqari}</li>
+  				<li>კარაქი: {ORINABIJI_karaqi}</li>
+                <li>რძე: {ORINABIJI_rdze}</li>
+  				<li>ქათმის ფილე: {ORINABIJI_qatmisfile}</li>
+  				<li>მაწონი: {ORINABIJI_mawoni}</li>
+            </ul>
+         </p>
     </div>
-
+    
     <div style="
         width: 50%;
         height: 50%;
         padding: 20px;
         box-sizing: border-box;
-        background-color: #c0c0c0;
-        align-self: flex-end;
+        background-color: #f0f0f0;
     ">
         <p style="font-size: 12px;">MAGNITI
             <ul>
-  							<li>პური: </li>
-  							<li>კარტოფილი: </li>
-  							<li>კვერცხი: </li>
-                <li>ზეთი: </li>
-  							<li>შაქარი: </li>
-  							<li>კარაქი: </li>
-                <li>რძე: </li>
-  							<li>ქათმის ფილე: </li>
-  							<li>მაწონი: </li>
-						</ul> 
-        </p>
+                <li>პური: {MAGNITI_puri}</li>
+                <li>კარტოფილი: {MAGNITI_kartopili}</li>
+                <li>კვერცხი: {MAGNITI_kvercxi}</li>
+                <li>ზეთი: {MAGNITI_zeti}</li>
+  				<li>შაქარი: {MAGNITI_shaqari}</li>
+  				<li>კარაქი: {MAGNITI_karaqi}</li>
+                <li>რძე: {MAGNITI_rdze}</li>
+  				<li>ქათმის ფილე: {MAGNITI_qatmisfile}</li>
+  				<li>მაწონი: {MAGNITI_mawoni}</li>
+            </ul>
+         </p>
     </div>
+    <!-- Repeat the similar structure for other sections -->
 
 </body>
 </html>
+"""
+
+# Substitute placeholders with prices from the dictionary
+html_code = html_code.format(
+    NIKORA_puri=prices_dict.get('oil sunflower', ''),
+    NIKORA_kartopili=prices_dict.get('corn powder', ''),
+    NIKORA_kvercxi=prices_dict.get('corn powder', ''),
+    NIKORA_zeti=prices_dict.get('corn powder', ''),
+    NIKORA_shaqari=prices_dict.get('corn powder', ''),
+    NIKORA_karaqi=prices_dict.get('corn powder', ''),
+    NIKORA_rdze=prices_dict.get('corn powder', ''),
+    NIKORA_qatmisfile=prices_dict.get('corn powder', ''),
+    NIKORA_mawoni=prices_dict.get('corn powder', ''),
+
+    CAREFOUR_puri=prices_dict.get('oil sunflower', ''),
+    CAREFOUR_kartopili=prices_dict.get('corn powder', ''),
+    CAREFOUR_kvercxi=prices_dict.get('corn powder', ''),
+    CAREFOUR_zeti=prices_dict.get('corn powder', ''),
+    CAREFOUR_shaqari=prices_dict.get('corn powder', ''),
+    CAREFOUR_karaqi=prices_dict.get('corn powder', ''),
+    CAREFOUR_rdze=prices_dict.get('corn powder', ''),
+    CAREFOUR_qatmisfile=prices_dict.get('corn powder', ''),
+    CAREFOUR_mawoni=prices_dict.get('corn powder', ''),
+
+    ORINABIJI_puri=prices_dict.get('oil sunflower', ''),
+    ORINABIJI_kartopili=prices_dict.get('corn powder', ''),
+    ORINABIJI_kvercxi=prices_dict.get('corn powder', ''),
+    ORINABIJI_zeti=prices_dict.get('corn powder', ''),
+    ORINABIJI_shaqari=prices_dict.get('corn powder', ''),
+    ORINABIJI_karaqi=prices_dict.get('corn powder', ''),
+    ORINABIJI_rdze=prices_dict.get('corn powder', ''),
+    ORINABIJI_qatmisfile=prices_dict.get('corn powder', ''),
+    ORINABIJI_mawoni=prices_dict.get('corn powder', ''),
+
+    MAGNITI_puri=prices_dict.get('oil sunflower', ''),
+    MAGNITI_kartopili=prices_dict.get('corn powder', ''),
+    MAGNITI_kvercxi=prices_dict.get('corn powder', ''),
+    MAGNITI_zeti=prices_dict.get('corn powder', ''),
+    MAGNITI_shaqari=prices_dict.get('corn powder', ''),
+    MAGNITI_karaqi=prices_dict.get('corn powder', ''),
+    MAGNITI_rdze=prices_dict.get('corn powder', ''),
+    MAGNITI_qatmisfile=prices_dict.get('corn powder', ''),
+    MAGNITI_mawoni=prices_dict.get('corn powder', ''),
+)
+
+# Write the modified HTML code to a new HTML file
+with open('output.html', 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("HTML file 'output.html' created successfully.")
